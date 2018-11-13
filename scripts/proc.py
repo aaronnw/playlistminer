@@ -1,5 +1,5 @@
 import pprint
-import cPickle as pickle
+import pickle as pickle
 import simplejson as json
 import math
 
@@ -8,7 +8,7 @@ f = open('tracks.pkl', 'r')
 data = pickle.load(f)
 
 
-print 'tracks', data['ntracks'], 'offset', data['offset'], 'playlists', data['playlists']
+print('tracks', data['ntracks'], 'offset', data['offset'], 'playlists', data['playlists'])
 
 tracks = data['tracks']
 total = float(data['playlists'])
@@ -20,7 +20,7 @@ top.reverse()
 
 for obj, id in top[:200]:
     frac = 100.0 * obj['count'] / total
-    print "%s %d %.2f %s %s" % (id, obj['count'], frac, obj['title'], obj['artist'])
+    print("%s %d %.2f %s %s" % (id, obj['count'], frac, obj['title'], obj['artist']))
 
 
 out = {}
